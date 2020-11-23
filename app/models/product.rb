@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-  has_many :users
+  belongs_to :users
   validates :name, :price, :category, presence: true
 end
