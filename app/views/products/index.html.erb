@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Products</h1>
+  <ul>
+    <% @products.each do |product| %>
+      <li>
+        <%= link_to product.name, product_path(product) %>
+        <%= product.details %>
+        <%= product.price %>
+        <%= product.category %>
+      </li>
+    <% end %>
+  </ul>
+
+  <button type="button" class="btn btn-light">
+    <%= link_to "Create a new product", new_product_path %>
+  </button>
+</div>
