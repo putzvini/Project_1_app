@@ -5,6 +5,13 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def list
+    if user_signed_in?
+      current_user.product
+    else render :home, notice: 'Please, login first.'
+    end
+  end
+
   def new
     @product = Product.new
   end
