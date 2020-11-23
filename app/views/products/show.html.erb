@@ -1,0 +1,15 @@
+<div class="container">
+  <h2><%= @product.name %></h2>
+  <p><strong>Details: </strong><%= @product.details %></p>
+  <p><strong>Price: </strong>R$ <%= @product.price %></p>
+  <p><strong>Product Category: </strong><%= @product.category %></p>
+
+
+  <%= link_to "Edit product", edit_product_path(@product) %>
+  <%= link_to "Delete product",
+              product_path(@product),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+
+  <%= link_to "Back to the list", products_path %>
+</div>
