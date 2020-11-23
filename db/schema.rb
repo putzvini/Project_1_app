@@ -20,14 +20,20 @@ ActiveRecord::Schema.define(version: 2020_11_23_175356) do
     t.text "details"
     t.decimal "price"
     t.string "category"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "purchases", force: :cascade do |t|
     t.decimal "value"
+    t.bigint "user_id"
+    t.bigint "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_purchases_on_product_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,4 +48,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_175356) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "products", "users"
+  add_foreign_key "purchases", "products"
+  add_foreign_key "purchases", "users"
 end
