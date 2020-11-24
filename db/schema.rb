@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_175356) do
     t.text "details"
     t.decimal "price"
     t.string "category"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_products_on_user_id"
