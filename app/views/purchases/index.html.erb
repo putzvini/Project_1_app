@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>My Purchases</h1>
+  <ul>
+    <% @purchases.each do |purchase| %>
+      <li>
+        <%= link_to purchase.product.name, purchase_path(purchase) %>
+        <%= purchase.value %>
+        <%= purchase.product.category %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to "Back to the list", products_path %>
+</div>
