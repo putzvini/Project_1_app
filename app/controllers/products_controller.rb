@@ -20,8 +20,12 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.save
-    redirect_to product_path(@product)
+    @product.user = current_user
+    if @product.save
+      redirect_to product_path(@product)
+    else
+      render :new
+    end
   end
 
   def edit; end
