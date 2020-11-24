@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
@@ -8,7 +9,8 @@ class ProductsController < ApplicationController
   def list
     if user_signed_in?
       current_user.product
-    else render :home, notice: 'Please, login first.'
+    else
+      render :home, notice: 'Please, login first.'
     end
   end
 
@@ -20,19 +22,30 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.save
-    redirect_to product_path(@product)
+    @product.user = current_user
+    if @product.save
+      redirect_to product_path(@product)
+    else
+      render :new
+    end
   end
 
-  def edit; end
+  def edit
+    if @product.user == current_user
+      render :edit
+    else
+      redirect_to @product
+    end
+  end
 
   def update
-    @product.update(product_params)
+    @product.update(product_params) if @product.user == current_user
     redirect_to product_path(@product)
+
   end
 
   def destroy
-    @product.destroy
+    @product.destroy if @product.user == current_user
     redirect_to products_path
   end
 
