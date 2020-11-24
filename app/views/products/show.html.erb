@@ -1,15 +1,21 @@
-<div class="container">
-  <h2><%= @product.name %></h2>
-  <p><strong>Details: </strong><%= @product.details %></p>
-  <p><strong>Price: </strong>R$ <%= @product.price %></p>
-  <p><strong>Product Category: </strong><%= @product.category %></p>
+<div class="container py-3">
+  <div class="row">
+    <div class="col-md-8">
+      <%= image_tag "https://source.unsplash.com/800x600/?drink-#{@product.name}", class: 'card-img-top' %>
+    </div>
+    <div class="col-md-4">
+      <h2><%= @product.name %></h2>
+      <p id="price"><strong></strong>R$ <%= @product.price %></p>
+      <h5><strong>Description:</strong></h5>
+      <p id="details"><strong></strong><%= @product.details %></p>
 
+      <%= link_to "Edit product", edit_product_path(@product) %>
+      <%= link_to "Delete product",
+                  product_path(@product),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
 
-  <%= link_to "Edit product", edit_product_path(@product) %>
-  <%= link_to "Delete product",
-              product_path(@product),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-
-  <%= link_to "Back to the list", products_path %>
+      <button class="btn btn-success w-100">PURCHASE</button>
+    </div>
+  </div>
 </div>
