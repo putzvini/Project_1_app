@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>My Purchases</h2>
+  <h2><%= @purchase.product.name %></h2>
+  <p><strong>Details: </strong><%= @purchase.product.details %></p>
+  <p><strong>Price: </strong>R$ <%= @purchase.product.price %></p>
+  <p><strong>Product Category: </strong><%= @purchase.product.category %></p>
+
+
+
+  <%= link_to "Delete product", product_purchases_path(@purchase),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+
+  <%= link_to "Back to the list", products_path %>
+</div>

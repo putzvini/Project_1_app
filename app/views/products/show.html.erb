@@ -6,10 +6,10 @@
 
 
   <%= link_to "Edit product", edit_product_path(@product) %>
-  <%= link_to "Delete product",
-              product_path(@product),
+  <%= link_to "Delete product", product_path(@product),
               method: :delete,
               data: { confirm: "Are you sure?" } %>
 
   <%= link_to "Back to the list", products_path %>
+  <%= link_to "Buy product", product_purchases_path(@product), method: :post %>
 </div>

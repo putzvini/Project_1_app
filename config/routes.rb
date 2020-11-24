@@ -11,5 +11,9 @@ Rails.application.routes.draw do
      end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :products
+  resources :products do
+    resources :purchases, only: [:create]
+  end
+
+  resources :purchases, only: [:show, :index]
 end
