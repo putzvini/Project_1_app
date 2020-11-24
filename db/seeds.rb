@@ -8,13 +8,11 @@
 
 puts 'Creating users'
 
-user1 = User.create!(username: "user1",
-                     email: "user1@user1.com",
+user1 = User.create!(email: "user1@user1.com",
                      password: 123456
                     )
 
-user2 = User.create!(username: "user2",
-                     email: "user2@user2.com",
+user2 = User.create!(email: "user2@user2.com",
                      password: 123456
                     )
 
@@ -24,7 +22,7 @@ puts 'adding products'
     product = Product.create!(
       name: 'Embroidery Kit For Beginner',
       details: 'Contains the necessary items you need to start and finish your first embroidery.',
-      price: (50..500).rand(1),
+      price: 50,
       category: 'Craft Supplies',
       user: user1
       )
@@ -32,7 +30,7 @@ puts 'adding products'
     product = Product.create!(
       name: 'Photo Socks',
       details: 'Create a truly unique gift for that special person or add a personal touch to your own outfits with our fully customizable socks!',
-      price: (50..500).rand(1),
+      price: 20,
       category: 'Clothing',
       user: user2
       )
@@ -40,7 +38,7 @@ puts 'adding products'
     product = Product.create!(
       name: 'PRINT flying bumblebee',
       details: 'This is an art print on paper of my flying bumblebee drawing.',
-      price: (50..500).rand(1),
+      price: 30,
       category: 'Art',
       user: user1
       )
@@ -48,7 +46,7 @@ puts 'adding products'
     product = Product.create!(
       name: 'Among Us Crewmate Plush Game',
       details: 'Very Limited Stock, Only Available for a short time!',
-      price: (50..500).rand(1),
+      price: 100,
       category: 'Toys',
       user: user2
       )
@@ -56,7 +54,7 @@ puts 'adding products'
     product = Product.create!(
       name: 'White Pottery Mug Ceramic Mug',
       details: "This white pottery mug is great for slow coffee drinkers. It's volume is about 10,5 oz. (300ml)",
-      price: (50..500).rand(1),
+      price: 10,
       category: 'Home',
       user: user1
       )
