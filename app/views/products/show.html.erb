@@ -14,8 +14,6 @@
                   product_path(@product),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
-
-      <button class="btn btn-success w-100">PURCHASE</button>
+      <%= link_to "PURCHASE", product_purchases_path(@product), method: :post, class: "btn btn-success w-100" %>
     </div>
   </div>
-</div>
