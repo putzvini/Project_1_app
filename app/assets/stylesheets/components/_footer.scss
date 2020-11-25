@@ -5,8 +5,12 @@
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
+  width: 100%;
   color: rgba(0,0,0,0.3);
+  bottom: 0;
+  position: relative;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
