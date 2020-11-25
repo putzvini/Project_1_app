@@ -1,3 +1,12 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1468322638156-074863f9362e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);">
+  <div class="container">
+    <h1>Artsy is the platform that connects handicraft lovers with artisans of the whole country!</h1>
+    <p>Our job is to connect both ends, with <strong style="color:#FDB048">fair rate</strong> for the artisan and a <strong style="color:#FDB048">fair price </strong>for the buyer.</p>
+  </div>
+</div>
+<div>
+  <h2 id="scroll-call">Scroll Down To Find Things You'll Love</h2>
+</div>
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3">
     <% @products.each do |product| %>
@@ -8,7 +17,7 @@
       <% else %>
         <%= cl_image_tag('vitor_k4t6bg.png', class: 'card-img') %>
       <% end %>
-        
+
         <div class="card-body">
           <h6><%= link_to product.name, product_path(product) %></h6>
           <p>R$ <%= product.price %></p>
