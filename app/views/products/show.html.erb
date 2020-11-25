@@ -1,15 +1,29 @@
-<div class="container">
-  <h2><%= @product.name %></h2>
-  <p><strong>Details: </strong><%= @product.details %></p>
-  <p><strong>Price: </strong>R$ <%= @product.price %></p>
-  <p><strong>Product Category: </strong><%= @product.category %></p>
+<div class="container py-3">
+  <div class="row">
+    <div class="col-md-8">
+       <% if @product.photo.attached? %>
+        <%= cl_image_tag @product.photo.key, class: 'card-img-top' %>
+      <% else %>
+        <%= cl_image_tag('vitor_k4t6bg.png', class: 'card-img-top') %>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <h2><%= @product.name %></h2>
+      <p id="price"><strong></strong>R$ <%= @product.price %></p>
+      <h5><strong>Description:</strong></h5>
+      <p id="details"><strong></strong><%= @product.details %></p>
 
+      <% if @product.user == current_user %>
+      <p><strong>What do you want to do?</strong></p>
+      <%= link_to "Edit product", edit_product_path(@product), class: "btn btn-warning" %>
+      <%= link_to "Delete product",
+                  product_path(@product),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" },
+                  class: "btn btn-danger" %>
+      <% else %>  <%= link_to "PURCHASE", product_purchases_path(@product), method: :post, class: "btn btn-success w-100" %>
+      <% end %>
 
-  <%= link_to "Edit product", edit_product_path(@product) %>
-  <%= link_to "Delete product",
-              product_path(@product),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-
-  <%= link_to "Back to the list", products_path %>
+    </div>
+  </div>
 </div>
