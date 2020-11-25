@@ -41,7 +41,6 @@ class ProductsController < ApplicationController
   def update
     @product.update(product_params) if @product.user == current_user
     redirect_to product_path(@product)
-
   end
 
   def destroy
