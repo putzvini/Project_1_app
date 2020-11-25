@@ -3,7 +3,12 @@
     <% @products.each do |product| %>
     <div class="col mb-4">
       <div class="card-index">
-        <%= image_tag "https://source.unsplash.com/800x600/?#{product.name}", class: 'card-img' %>
+      <% if product.photo.attached? %>
+        <%= cl_image_tag product.photo.key, class: 'card-img' %>
+      <% else %>
+        <%= cl_image_tag('vitor_k4t6bg.png', class: 'card-img') %>
+      <% end %>
+        
         <div class="card-body">
           <h6><%= link_to product.name, product_path(product) %></h6>
           <p>R$ <%= product.price %></p>

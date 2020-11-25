@@ -1,7 +1,11 @@
 <div class="container py-3">
   <div class="row">
     <div class="col-md-8">
-      <%= image_tag "https://source.unsplash.com/800x600/?drink-#{@product.name}", class: 'card-img-top' %>
+       <% if @product.photo.attached? %>
+        <%= cl_image_tag @product.photo.key, class: 'card-img-top' %>
+      <% else %>
+        <%= cl_image_tag('vitor_k4t6bg.png', class: 'card-img-top') %>
+      <% end %>
     </div>
     <div class="col-md-4">
       <h2><%= @product.name %></h2>
