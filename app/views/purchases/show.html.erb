@@ -1,15 +1,17 @@
-<div class="container">
-  <h2>My Purchases</h2>
-  <h2><%= @purchase.product.name %></h2>
-  <p><strong>Details: </strong><%= @purchase.product.details %></p>
-  <p><strong>Price: </strong>R$ <%= @purchase.product.price %></p>
-  <p><strong>Product Category: </strong><%= @purchase.product.category %></p>
-
-
-
-  <%= link_to "Delete product", product_purchases_path(@purchase),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-
-  <%= link_to "Back to the list", products_path %>
+<div class="container py-3">
+  <div class="row">
+    <div class="col-md-8">
+       <% if @purchase.product.photo %>
+        <%= cl_image_tag @purchase.product.photo.key, class: 'card-img-top' %>
+      <% else %>
+        <%= cl_image_tag('vitor_k4t6bg.png', class: 'card-img-top') %>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <h2><%= @purchase.product.name %></h2>
+      <p id="price"><strong></strong>R$ <%= @purchase.product.price %></p>
+      <h5><strong>Description:</strong></h5>
+      <p id="details"><strong></strong><%= @purchase.product.details %></p>
+    </div>
+  </div>
 </div>
