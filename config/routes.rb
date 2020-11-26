@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   resources :products do
     resources :purchases, only: [:create]
   end
-  
+
   resources :purchases, only: [:show, :index]
   get 'my_products', to: 'products#my_products', as: :my_products
-  
+
   # verb 'path', to: 'controller#action'
 end
