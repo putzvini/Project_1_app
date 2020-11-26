@@ -14,7 +14,5 @@ Rails.application.routes.draw do
   resources :products do
     resources :purchases, only: [:create]
   end
-
   resources :purchases, only: [:show, :index]
-  resources :products, only: [:index, :home]
 end
