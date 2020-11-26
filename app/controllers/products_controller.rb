@@ -19,6 +19,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def my_products
+    @products = current_user.products
+  end
+
   def new
     @product = Product.new
   end
