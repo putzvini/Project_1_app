@@ -7,35 +7,40 @@
 <div>
   <h2 id="scroll-call">Scroll Down To Find Things You'll Love</h2>
 </div>
-<div class="container">
 
-  <%= form_tag products_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a product" %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+<div class="card-grid">
+
+  <% @products.each do |product| %>
+  <div class="newcard">
+
+    <div class="product-img">
+      <% if product.photo.attached? %>
+        <%= cl_image_tag product.photo.key, class: "newcard-img" %>
+      <% else %>
+        <%= image_tag 'product-sample.png', class: "newcard-img" %>
+      <% end %>
+    </div>
+
+    <div class="product-info">
+      <div class="product-text">
+        <h1><%= product.name %></h1>
+        <h2>BY <%= product.user.email %></h2>
+        <p><%= product.details %></p>
+      </div>
+      <div class="product-price">
+        <p>R$<span><%= product.price.to_i %></span></p>
+      </div>
+      <div class="product-price-btn">
+        <% if product.user == current_user %>
+          <%= link_to "your product", product_path(product), method: :get, class: "btn" %>
+        <% else  %>
+           <%= link_to "details", product_path(product), method: :get, class: "btn" %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
   <% end %>
 
 </div>
 
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-3">
-    <% @products.each do |product| %>
-    <div class="col mb-4">
-      <div class="card-index">
-      <% if product.photo.attached? %>
-        <%= cl_image_tag product.photo.key, class: 'card-img' %>
-      <% else %>
-        <%= image_tag 'product-sample.png', class: 'card-img'%>
-      <% end %>
-
-        <div class="card-body">
-          <h6><%= link_to product.name, product_path(product) %></h6>
-          <p>R$ <%= product.price %></p>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</div>
