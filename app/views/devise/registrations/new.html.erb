@@ -1,4 +1,7 @@
-<h2>Sign up</h2>
+<div class ="container py-3">
+  <div class="card-title"><strong><h2>Sign up</h2></strong></div>
+
+  <div class="card-info">
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -8,7 +11,7 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
-    <%= f.input :photo, 
+    <%= f.input :photo,
                 as: :file,
                 required: false %>
     <%= f.input :password,
@@ -20,9 +23,15 @@
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
+   <div class="form-actions">
+    <%= f.button :submit, "Join us!", class: "btn btn-primary" %>
+    <br>
+    <br>
+    <%- if controller_name != 'sessions' %>
+  <%= link_to "Log in", new_session_path(resource_name) %><br />
 <% end %>
 
-<%= render "devise/shared/links" %>
+ <% end %>
+ </div>
+ </div>
+</div>
