@@ -4,7 +4,7 @@ h1 {
   color: #474747;
 }
 
-h5{
+h5 {
   font-family: 'Playfair Display', serif;
   color: #8d8d8d;
   font-size: 20px;
@@ -23,4 +23,15 @@ h5{
   color: #8d8d8d;
   font-size: 15px;
   font-weight: lighter;
+}
+
+.photo {
+  object-fit: cover;
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 7px 0 0 7px;
+}
+
+#card {
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 0 7px 10px 7px;
 }

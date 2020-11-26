@@ -1,13 +1,13 @@
 <div class="container py-3">
-  <div class="row">
+  <div class="row"  >
     <div class="col-md-8">
        <% if @product.photo.attached? %>
-        <%= cl_image_tag @product.photo.key, class: 'card-img-top' %>
+        <%= cl_image_tag @product.photo.key, class: 'photo' %>
       <% else %>
-        <%= image_tag 'product-sample.png', class: 'card-img-top' %>
+        <%= image_tag 'product-sample.png', class: 'photo' %>
       <% end %>
     </div>
-    <div class="col-md-4" style="background-color: white">
+    <div class="col-md-4" id="card" style="background-color: white ">
       <h1><%= @product.name %></h1>
       <p id="price"><strong></strong>R$ <%= @product.price.to_i %>,00</p>
       <h5><strong>Description:</strong></h5>
