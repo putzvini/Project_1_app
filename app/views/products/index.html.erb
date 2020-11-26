@@ -15,7 +15,7 @@
       <% if product.photo.attached? %>
         <%= cl_image_tag product.photo.key, class: 'card-img' %>
       <% else %>
-        <%= cl_image_tag('vitor_k4t6bg.png', class: 'card-img') %>
+        <%= image_tag 'product-sample.png', class: 'card-img'%>
       <% end %>
 
         <div class="card-body">
