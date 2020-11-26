@@ -11,3 +11,22 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 93vh;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -100px;
+}
+
+.footer,
+.push {
+  height: 100px;
+}

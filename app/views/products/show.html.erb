@@ -4,7 +4,7 @@
        <% if @product.photo.attached? %>
         <%= cl_image_tag @product.photo.key, class: 'card-img-top' %>
       <% else %>
-        <%= cl_image_tag('vitor_k4t6bg.png', class: 'card-img-top') %>
+        <%= image_tag 'product-sample.png', class: 'card-img-top' %>
       <% end %>
     </div>
     <div class="col-md-4">
@@ -14,7 +14,7 @@
       <p id="details"><strong></strong><%= @product.details %></p>
 
       <% if @product.user == current_user %>
-      <p><strong>What do you want to do?</strong></p>
+      <p><strong>This is your product. What do you want to do?</strong></p>
       <%= link_to "Edit product", edit_product_path(@product), class: "btn btn-warning" %>
       <%= link_to "Delete product",
                   product_path(@product),

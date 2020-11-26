@@ -1,17 +1,20 @@
 <div class="container">
-  <h1>Products</h1>
-  <ul>
+  <div class="row row-cols-1 row-cols-md-3">
     <% @products.each do |product| %>
-      <li>
-        <%= link_to product.name, product_path(product) %>
-        <%= product.details %>
-        <%= product.price %>
-        <%= product.category %>
-      </li>
-    <% end %>
-  </ul>
+    <div class="col mb-4">
+      <div class="card-index">
+      <% if product.photo.attached? %>
+        <%= cl_image_tag product.photo.key, class: 'card-img' %>
+      <% else %>
+        <%= cl_image_tag('vitor_k4t6bg.png', class: 'card-img') %>
+      <% end %>
 
-  <button type="button" class="btn btn-light">
-    <%= link_to "Create a new product", new_product_path %>
-  </button>
+        <div class="card-body">
+          <h6><%= link_to product.name, product_path(product) %></h6>
+          <p>R$ <%= product.price %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
