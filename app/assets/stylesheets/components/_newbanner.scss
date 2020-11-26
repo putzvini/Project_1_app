@@ -1,7 +1,9 @@
-// #myCarousel {
-//   height: 500px;
-// }
-
+#myCarousel {
+  height: calc(100vh - 62px);
+  .carousel-inner {
+    height: 100%;
+  }
+}
 
 #myCarousel .carousel-item .mask {
     position: absolute;
