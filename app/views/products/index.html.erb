@@ -1,11 +1,43 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1468322638156-074863f9362e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);">
-  <div class="container">
-    <h1>Artsy is the platform that connects handicraft lovers with artisans of the whole country!</h1>
-    <p>Our job is to connect both ends, with <strong style="color:#FDB048">fair rate</strong> for the artisan and a <strong style="color:#FDB048">fair price </strong>for the buyer.</p>
-  </div>
-</div>
-<div>
-  <h2 id="scroll-call">Scroll Down To Find Things You'll Love</h2>
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)), url(https://images.unsplash.com/photo-1456456496250-d5e7c0a9b44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80)">
+            <div class="mask flex-center">
+                <div class="container">
+                    <div class="row align-items-center" style="margin-top:60px">
+                        <div class="col-md-8 col-12 order-md-1 order-2">
+                            <h4 id="presentation">A <strong style="color:#9cebd5">Artsy</strong> conecta artesãos às pessoas que amam artesanato.</h4>
+                            <p id="presentation2">Nosso trabalho é conectar ambas as partes, com <strong style="color:#9cebd5">taxas justas</strong> para os artesãos e <strong style="color:#9cebd5">preços justos </strong>para os consumidores.</p> <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)), url(https://images.unsplash.com/photo-1544443830-22675fff7986?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+            <div class="mask flex-center">
+                <div class="container">
+                    <div class="row align-items-center" style="margin-top:60px">
+                        <div class="col-md-8 col-12 order-md-1 order-2">
+                            <h4>As <strong style="color:#9cebd5">canecas</strong> mais bonitas</h4>
+                            <p>Aqui você vai encontrar as mais diversas canecas, em cores, tamanhos e materiais variados.</p> <br> <a href="#">COMPRE AGORA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)), url(https://images.unsplash.com/photo-1547056391-a8d5e1b05fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80)">
+            <div class="mask flex-center">
+                <div class="container">
+                    <div class="row align-items-center" style="margin-top:60px">
+                        <div class="col-md-8 col-12 order-md-1 order-2">
+                            <h4><strong style="color:#9cebd5">Suprimentos</strong> para os seus hobbies</h4>
+                            <p>Encontre todos os materiais das suas marcas favoritas para o seu hobby, de linhas e costura a tinta.</p> <br> <a href="#">COMPRE AGORA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+
 </div>
 
 <div class="card-grid">
@@ -28,7 +60,7 @@
         <p><%= product.details %></p>
       </div>
       <div class="product-price">
-        <p>R$<span><%= product.price.to_i %></span></p>
+        <p>R$ <span><%= product.price.to_i %>,00</span></p>
       </div>
       <div class="product-price-btn">
         <% if product.user == current_user %>
