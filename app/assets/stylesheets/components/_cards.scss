@@ -29,21 +29,15 @@ p {
     margin-inline-end: 0px;
 }
 
-.card-info {
-  background-size: cover;
-  background-position: center;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: .50rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 15px;
-  padding: 20px;
-}
+
+
  h2 {
   text-align: center;
   margin: 10px
  }
+ .card-title {
+  text-align: center;
+  margin: 10px
+ }
+
 

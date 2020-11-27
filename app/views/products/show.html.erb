@@ -14,6 +14,7 @@
       <p id="details"><strong></strong><%= @product.details %></p>
 
       <% if @product.user == current_user %>
+
       <h5><strong>This is your product. What do you want to do?</strong></h5>
       <div class="text-center">
         <%= link_to "Edit product", edit_product_path(@product), class: "btn btn-warning" %>
