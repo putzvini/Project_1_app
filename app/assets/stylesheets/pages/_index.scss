@@ -1,3 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+
+
+#purchase h1 {
+  font-family: 'Bentham', serif;
+  color: #474747;
+}
+
+
+#purchase th {
+  font-family: 'Playfair Display', serif;
+}
