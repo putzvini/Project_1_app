@@ -11,8 +11,8 @@
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Find a product" %>
-        <%= submit_tag "Search", class: "btn btn-outline-info mx-2 my-sm-1" %>
+          placeholder: "Procure por produtos" %>
+        <%= submit_tag "Buscar", class: "btn btn-outline-info mx-2 my-sm-1" %>
       <% end %>
     </form>
 
@@ -23,7 +23,7 @@
           <%= link_to "Home", products_path, class: "nav-link", style: "color: #FBEEE9"; %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sell Something", new_product_path, class: "btn btn-info", style: "color: #79b0a1"; %>
+          <%= link_to "Venda Algo!", new_product_path, class: "btn btn-info", style: "color: #79b0a1"; %>
         </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
@@ -32,8 +32,8 @@
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My Purchases", purchases_path, class: "dropdown-item" %>
-            <%= link_to "My Products", my_products_path, class: "dropdown-item" %>
+            <%= link_to "Minhas Compras", purchases_path, class: "dropdown-item" %>
+            <%= link_to "Minhas Vendas", my_products_path, class: "dropdown-item" %>
             <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

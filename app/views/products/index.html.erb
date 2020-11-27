@@ -57,7 +57,7 @@
     <div class="product-info">
       <div class="product-text">
         <h1><%= product.name.titleize %></h1>
-        <h2>BY <%= product.user.email.split("@").first %></h2>
+        <h2>POR <%= product.user.email.split("@").first %></h2>
         <p><%= product.details %></p>
       </div>
       <div class="product-price">
@@ -65,9 +65,9 @@
       </div>
       <div class="product-price-btn">
         <% if product.user == current_user %>
-          <%= link_to "your product", product_path(product), method: :get, class: "btn" %>
+          <%= link_to "SUA VENDA", product_path(product), method: :get, class: "btn" %>
         <% else  %>
-           <%= link_to "details", product_path(product), method: :get, class: "btn" %>
+           <%= link_to "DETALHES", product_path(product), method: :get, class: "btn" %>
         <% end %>
       </div>
     </div>
