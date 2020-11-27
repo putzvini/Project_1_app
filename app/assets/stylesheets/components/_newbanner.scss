@@ -1,7 +1,9 @@
-// #myCarousel {
-//   height: 500px;
-// }
-
+#myCarousel {
+  height: calc(100vh - 62px);
+  .carousel-inner {
+    height: 100%;
+  }
+}
 
 #myCarousel .carousel-item .mask {
     position: absolute;
@@ -13,7 +15,7 @@
 }
 
 #myCarousel h4 {
-    font-size: 50px;
+    font-size: 80px;
     margin-bottom: 15px;
     color: #d5d5d5;
     line-height: 100%;
@@ -41,6 +43,7 @@
     padding: 13px 32px;
     display: inline-block;
     margin-left: 40px;
+    border-radius: 60px;
 }
 
 #myCarousel .carousel-item a:hover {

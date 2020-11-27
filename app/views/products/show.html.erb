@@ -1,15 +1,15 @@
 <div class="container py-3">
-  <div class="row">
+  <div class="row"  >
     <div class="col-md-8">
        <% if @product.photo.attached? %>
-        <%= cl_image_tag @product.photo.key, class: 'card-img-top' %>
+        <%= cl_image_tag @product.photo.key, class: 'photo' %>
       <% else %>
-        <%= image_tag 'product-sample.png', class: 'card-img-top' %>
+        <%= image_tag 'product-sample.png', class: 'photo' %>
       <% end %>
     </div>
-    <div class="col-md-4">
-      <h2><%= @product.name %></h2>
-      <p id="price"><strong></strong>R$ <%= @product.price %></p>
+    <div class="col-md-4" id="card" style="background-color: white ">
+      <h1><%= @product.name %></h1>
+      <p id="price"><strong></strong>R$ <%= @product.price.to_i %>,00</p>
       <h5><strong>Description:</strong></h5>
       <p id="details"><strong></strong><%= @product.details %></p>
 
@@ -21,7 +21,7 @@
                   method: :delete,
                   data: { confirm: "Are you sure?" },
                   class: "btn btn-danger" %>
-      <% else %>  <%= link_to "PURCHASE", product_purchases_path(@product), method: :post, class: "btn btn-success w-100" %>
+      <% else %>  <%= link_to "PURCHASE", product_purchases_path(@product), method: :post, class: "btn btn-primary w-100", style: "bottom: 0"; %>
       <% end %>
 
     </div>

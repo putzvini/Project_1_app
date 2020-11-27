@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-  <%= link_to "Artsy.com", products_path, class: "navbar-brand" %>
+  <%= link_to "Artsy.com", products_path, class: "navbar-brand", style: "color: #79b0a1"; %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -12,7 +12,7 @@
           params[:query],
           class: "form-control",
           placeholder: "Find a product" %>
-        <%= submit_tag "Search", class: "btn btn-outline-primary my-4 my-sm-1" %>
+        <%= submit_tag "Search", class: "btn btn-outline-primary mx-2 my-sm-1" %>
       <% end %>
     </form>
 
@@ -20,7 +20,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", products_path, class: "nav-link", style: "color: white"; %>
+          <%= link_to "Home", products_path, class: "nav-link", style: "color: #79b0a1"; %>
         </li>
         <li class="nav-item">
           <%= link_to "Sell Something", new_product_path, class: "btn btn-primary" %>
@@ -39,7 +39,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link", style: "color: white"; %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link", style: "color: #79b0a1"; %>
         </li>
       <% end %>
     </ul>
