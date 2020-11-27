@@ -6,7 +6,8 @@ class ProductsController < ApplicationController
     @products = Product.all
     if params[:query].present?
       @show_banner = false
-      @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = "name ILIKE :query OR details ILIKE :query OR category ILIKE :query"
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
     else
       @show_banner = true
       @products = Product.all
