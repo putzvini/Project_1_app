@@ -5,8 +5,10 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     if params[:query].present?
+      @show_banner = false
       @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
     else
+      @show_banner = true
       @products = Product.all
     end
   end

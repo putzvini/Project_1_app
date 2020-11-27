@@ -7,7 +7,7 @@
   </button>
 
   <form class="form-inline">
-      <%= form_tag products_path, method: :get do %>
+      <%= form_tag products_path(anchor: 'cardresult'), method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
