@@ -7,7 +7,7 @@
         <%= image_tag 'product-sample.png', class: 'card-img-top' %>
       <% end %>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" id="card" style="background-color: white ">
       <h2><%= @purchase.product.name %></h2>
       <p id="price"><strong></strong>R$ <%= @purchase.product.price %></p>
       <h5><strong>Description:</strong></h5>
